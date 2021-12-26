@@ -1,9 +1,10 @@
 <?php
-$query = (isset($_GET['search']) ? 's/'.$_GET['search'] : (isset($_GET['country']) ? $_GET['country'] : 'russian_federation'));
+$search = (isset($_GET['search']) ? '/s/'.$_GET['search'] : '');
+$country = (isset($_GET['country']) ? $_GET['country'] : '');
 $limit = intval((isset($_GET['limit']) ? $_GET['limit'] : 10));
 
 header('Content-Type: application/octet-stream');
-header("Content-Disposition: attachment; filename=$query.m3u8");
+header("Content-Disposition: attachment; filename=$country$search.m3u8");
 
 $url = 'https://iptvcat.com/ajax/streams_a?action=playlist_download';
 
@@ -15,7 +16,7 @@ for ($i = 1; $i <= $limit; $i++) {
 		'http' => array(
 			'header'  => 'Referer: http://iptvcat.com/',
 			'method'  => 'POST',
-			'content' => "$query/$i"
+			'content' => "$country$search/$i"
 		)
 	);
 	$context = @stream_context_create($options);
