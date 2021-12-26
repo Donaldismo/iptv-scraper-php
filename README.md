@@ -22,4 +22,8 @@ localhost/?country=China&limit=100
 ```
 localhost/?search=HD&limit=1
 ```
+> Download list for China by "HD", 10 page
+```
+localhost/?country=China&search=HD&limit=10
+```
 
