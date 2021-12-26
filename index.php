@@ -4,9 +4,14 @@ $country = (isset($_GET['country']) ? $_GET['country'] : '');
 $limit = intval((isset($_GET['limit']) ? $_GET['limit'] : 10));
 
 header('Content-Type: application/octet-stream');
-header("Content-Disposition: attachment; filename=$country$search.m3u8");
+header("Content-Disposition: attachment; filename=iptvcat_$country$search.m3u8");
 
 $url = 'https://iptvcat.com/ajax/streams_a?action=playlist_download';
+
+if ($search == '' && $country == '') {
+	echo writeMsg('iptvcat Empty Query');
+	exit;
+}
 
 for ($i = 1; $i <= $limit; $i++) {
 	if (ob_get_level()) {
