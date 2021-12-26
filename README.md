@@ -1,7 +1,7 @@
 # About
 Simple https://iptvcat.com/ php scraper
 # Usage
-> Download list by country (default: Russian Federation)
+> Download list by country
 ```
 localhost/?country=Russian Federation
 ```
