@@ -20,6 +20,6 @@ localhost/?country=China&limit=100
 ```
 > Download list by "HD", 1 page
 ```
-localhost/?search=HD&limit=100
+localhost/?search=HD&limit=1
 ```
 
