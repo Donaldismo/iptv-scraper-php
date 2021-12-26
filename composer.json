@@ -1,0 +1,10 @@
+{
+    "name": "donaldismo/iptv-scraper-php",
+    "description": "Simple iptvcat scraper",
+    "require": {
+        "php": "*"
+    },
+    "require-dev": {
+        "heroku/heroku-buildpack-php": "v192"
+    }
+}
